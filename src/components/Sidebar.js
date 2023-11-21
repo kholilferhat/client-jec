@@ -1,20 +1,33 @@
+'use client'
 import Image from "next/image";
 import logo from "../../public/logo-dark.svg"
 import homeIcon from '../../public/sidebar-icon/home-icon.svg'
+import inpatientIcon from '../../public/sidebar-icon/category-icon.svg'
+import layout from '../../public/sidebar-icon/layout.svg'
 import arrowRight from '../../public/sidebar-icon/arrow-drop-down-line.svg'
+import { useState } from "react";
 export default function Sidebar() {
+
+    const [activeMenu, setActiveMenu] = useState(null);
+
+    const handleMenuClick = (index) => {
+        setActiveMenu(activeMenu === index ? null : index);
+    };
     return (
         <nav id="sidebar">
-            <div class="sidebar-header">
+            <div className="sidebar-header">
                 <Image
                     src={logo}
                 />
             </div>
 
-            <ul class="list-unstyled components">
-                <p>Menu</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <ul className="list-unstyled components">
+                <p>MENU</p>
+                <li className={activeMenu === 0 ? "active" : ""} >
+                    <a href="#"
+                        className="dropdown-toggle"
+                        onClick={() => handleMenuClick(0)}
+                    >
                         <div>
                             <Image
                                 src={homeIcon}
@@ -23,63 +36,94 @@ export default function Sidebar() {
                         </div>
                         <Image
                             src={arrowRight}
+                            className={activeMenu === 0 ? "arrowDown" : ""}
                         />
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <ul
+                        className={`list-unstyled ${activeMenu === 0 ? "show" : "collapse"
+                            }`}
+                        id="homeSubmenu">
                         <li>
-                            <a href="#">Home 1</a>
+                            <a href="#"><span>-</span> Registration</a>
                         </li>
                         <li>
-                            <a href="#">Home 2</a>
+                            <a href="#"><span>-</span> Appointment</a>
                         </li>
                         <li>
-                            <a href="#">Home 3</a>
+                            <a href="#"><span>-</span> Reminder</a>
+                        </li>
+                        <li>
+                            <a href="#"><span>-</span> Crypto</a>
+                        </li>
+                        <li>
+                            <a href="#"><span>-</span> Projects</a>
+                        </li>
+                        <li>
+                            <a href="#"><span>-</span> NFT</a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">
+                <li className={activeMenu === 1 ? "active" : ""} >
+                    <a href="#"
+                        className="dropdown-toggle"
+                        onClick={() => handleMenuClick(1)}
+                    >
                         <div>
                             <Image
-                                src={homeIcon}
+                                src={inpatientIcon}
                             />
-                            Encounter
+                            Inpatient
                         </div>
                         <Image
                             src={arrowRight}
+                            className={activeMenu === 1 ? "arrowDown" : ""}
                         />
                     </a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        Pages
-                    </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <ul
+                        className={`list-unstyled ${activeMenu === 1 ? "show" : "collapse"
+                            }`}
+                        id="homeSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="#"><span>-</span> Menu 1</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
+                            <a href="#"><span>-</span> Menu 2</a>
                         </li>
                         <li>
-                            <a href="#">Page 3</a>
+                            <a href="#"><span>-</span> Menu 3</a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-
-            <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-                </li>
-                <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                <li className={activeMenu === 2 ? "active" : ""} >
+                    <a href="#"
+                        className="dropdown-toggle"
+                        onClick={() => handleMenuClick(2)}
+                    >
+                        <div>
+                            <Image
+                                src={layout}
+                            />
+                            Layouts
+                        </div>
+                        <Image
+                            src={arrowRight}
+                            className={activeMenu === 2 ? "arrowDown" : ""}
+                        />
+                    </a>
+                    <ul
+                        className={`list-unstyled ${activeMenu === 2 ? "show" : "collapse"
+                            }`}
+                        id="homeSubmenu">
+                        <li>
+                            <a href="#"><span>-</span>Menu 1</a>
+                        </li>
+                        <li>
+                            <a href="#"><span>-</span>Menu 2</a>
+                        </li>
+                        <li>
+                            <a href="#"><span>-</span>Menu 3</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>

@@ -1,0 +1,10 @@
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="chevron-right">
+<mask id="mask0_41_2269" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="15">
+<rect id="Background" width="15" height="15" fill="white"/>
+</mask>
+<g mask="url(#mask0_41_2269)">
+<path id="Shape" d="M5.36877 10.3625L8.23127 7.5L5.36877 4.63125L6.25002 3.75L10 7.5L6.25002 11.25L5.36877 10.3625Z" fill="#878A99"/>
+</g>
+</g>
+</svg>

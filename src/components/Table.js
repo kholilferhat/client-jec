@@ -178,7 +178,7 @@ export function Table() {
                                 <tr>
                                     <td><Image src={newReg} /></td>
                                     <td>{el.medicalNo}</td>
-                                    <td>{el.patientName}</td>
+                                    <td><Image src={person} /> {el.patientName}</td>
                                     <td>{el.birthDate}</td>
                                     <td>{el.address}</td>
                                     <td>{el.phoneNo}</td>

@@ -37,7 +37,6 @@ export default function Topmenu() {
                 />
                 <div className="ipAddress">
                     <p>your ip address is</p>
-                    {/* api.ipify.org  */}
                     <span>127.0.0.1</span>
                 </div>
                 <div className="profileContainer">

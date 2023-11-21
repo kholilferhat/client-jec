@@ -191,7 +191,6 @@ ul ul a {
 
 #content {
   width: 100%;
-  /* padding: 20px; */
   min-height: 100vh;
   transition: all 0.3s;
 }
@@ -440,7 +439,6 @@ ul ul a {
 #table .addPatient {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   border-radius: 10px;
   background: #1c99b3;
   width: 140px;
@@ -546,7 +544,6 @@ ul ul a {
 
 table tbody tr {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-around;
 }
 
